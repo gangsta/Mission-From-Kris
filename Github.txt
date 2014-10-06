@@ -1,0 +1,49 @@
+#first i see an video in youtube about github you can see below a link to github beginners video
+
+# http://www.youtube.com/watch?v=U8GBXvdmHT4
+
+#then i read little bit about how to use it in github.com
+
+#so first you must install Git to your machine,open command(terminal) 
+
+#
+Debian/Ubuntu
+$ apt-get install git
+Fedora
+$ yum install git
+Gentoo
+$ emerge --ask --verbose dev-vcs/git
+Arch Linux
+$ pacman -S git
+openSUSE
+$ zypper install git
+FreeBSD
+$ cd /usr/ports/devel/git
+$ make install
+Solaris 11 Express
+$ pkg install developer/versioning/git
+OpenBSD
+$ pkg_add git 
+
+#then if it is good luck? got to github.com make an account for inlogging
+
+# Hier we start to add file`s to you git hub account 
+
+# in web page github.com make new repositorie
+
+# en then open your command(terminal)
+
+#
+touch README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/Username/Reposit.git
+git push -u origin master
+
+…or push an existing repository from the command line
+
+git remote add origin https://github.com/username/Reposti.git
+git push -u origin master
+
+# then click to refresh in web page,
