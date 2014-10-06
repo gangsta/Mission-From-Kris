@@ -47,3 +47,77 @@ git remote add origin https://github.com/username/Reposti.git
 git push -u origin master
 
 # then click to refresh in web page,
+
+#                      part 2  genereting SSH key
+
+$ ls -al ~/.ssh
+#lists the files in your.ssh directory,if they exist
+
+ssh-keygen -t rsa -C "your_email@example.com"
+# Creates a new ssh key using the provided email
+# Generating public/private rsa key pair.
+# Enter file in which to save the key (/your_home_path/.ssh/id_rsa):
+
+Next, you'll be asked to enter a passphrase.
+
+Tip: We strongly recommend a very good, secure passphrase. For more information, see Working with SSH key passphrases.
+
+# Enter passphrase (empty for no passphrase): [Type a passphrase]
+# Enter same passphrase again: [Type passphrase again]
+
+Which should give you something like this:
+
+# Your identification has been saved in /your_home_path/.ssh/id_rsa.
+# Your public key has been saved in /your_home_path/.ssh/id_rsa.pub.
+# The key fingerprint is:
+# 01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db your_email@example.com
+
+# start the ssh-agent in the background
+eval "$(ssh-agent -s)"
+# Agent pid 59566
+ssh-add ~/.ssh/id_rsa
+
+
+
+# Open the ~/.ssh/id_rsa.pub file with a text editor. This is your SSH key.
+  Select all and copy to your clipboard.
+
+
+# Account settings buttonIn the user bar in the top-right corner of any page,
+ click setting`s .
+ SSH Keys menuClick SSH Keys in the left sidebar.
+ SSH Key buttonClick Add SSH key.
+ Click Add key.
+
+#To make sure everything is working, you'll now try SSHing to GitHub.
+
+$ssh -T git@github.com
+# Attempts to ssh to github
+
+
+#            Part 3 Changing a remote's URL
+
+#The git remote set-url command takes two arguments:
+
+    An existing remote name, for example, origin
+    A new URL for the remote, for example:
+        https://github.com/user/repo2.git if you're updating to use HTTPS
+        git@github.com:user/repo2.git if you're updating to use SSH
+
+#Switching remote URLs from SSH to HTTPS
+git remote -v
+
+# origin  git@github.com:USERNAME/REPOSITORY.git (fetch)
+# origin  git@github.com:USERNAME/REPOSITORY.git (push)
+
+Change your remote's URL from SSH to HTTPS with the remote set-url command.
+
+git remote set-url origin https://github.com/USERNAME/REPOSITORY2.git
+
+Verify that the remote URL has changed.
+
+git remote -v
+# Verify new remote URL
+# origin  https://github.com/USERNAME/REPOSITORY2.git (fetch)
+# origin  https://github.com/USERNAME/REPOSITORY2.git (push)
+
