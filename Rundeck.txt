@@ -1,0 +1,95 @@
+#             Rundeck install
+
+#first you can follow steps in web page from Rundeck.org
+
+http://rundeck.org/docs/manual/getting-started.html#essential-concepts
+
+#below you can find the link to the download page for Rundeck 
+
+http://rundeck.org/downloads.html
+
+#how to install Rundeck in Yum(linux) machine
+
+Yum RPM Install
+
+Execute:
+yum install java-1.6.0
+rpm -Uvh http://repo.rundeck.org/latest.rpm
+yum install rundeck
+service rundeckd start
+
+#Next Steps
+
+Once you've installed and started the server, visit: http://localhost:4440
+
+Check out the Getting Started section of the Rundeck Guide. 
+
+#                      Startup and Shutdown
+
+Rundeck installation includes a control script used for starting and stopping the Rundeck server process. The control script provides a number of actions:
+
+rundeckd [start|stop|restart|condrestart|status]
+
+RPM
+
+The RPM installation includes the placement of the boot control script that will automatically start Rundeck when the system boots.
+
+The script is located here: /etc/init.d/rundeckd
+
+Startup
+
+/etc/init.d/rundeckd start
+
+Shutdown
+
+/etc/initd./rundeckd stop
+
+Setting JAVA_HOME
+
+When using the RPM, by default rundeck will use java found in your path. Various RPM based distributions provide ways of managing which version of java is found. CentOS uses /usr/sbin/alternatives and the processing of setting alternatives can be found here: http://wiki.centos.org/HowTos/JavaOnCentOS.
+
+If you have installed a JDK or JRE in a unique directory and do not want to alter the global system configuration, then simply setting JAVA_HOME before running any command will use the version of java found in JAVA_HOME/bin. Updating /etc/rundeck/profile with JAVA_HOME is another option as well.
+Launcher
+
+The Launcher installation generates the script into the RDECK_BASE directory.
+
+The script is located here: $RDECK_BASE/server/sbin/rundeckd.
+
+Startup
+
+$RDECK_BASE/server/sbin/rundeckd start
+
+Shutdown
+
+$RDECK_BASE/server/sbin/rundeckd stop
+
+#                       Creating Jobs
+
+From the Jobs, page press the "Create Job" menu to begin creating a Job. Then menu contains items to create a job definition or upload a definition from a file.
+Create Job menu
+
+Create Job menu
+
+For the first Job example, create a Job that calls the info script.
+
+Within the new job form:
+
+For "Job Name", enter "info" and for the "Group", enter "adm/resources". If you want to specify your own UUID you can enter it in the field. Otherwise a unique value will be set for you. Providing a description will be come helpful to other users to understand the intent and purpose for the Job.
+
+Check the box for "Dispatch to Nodes". Choose the "Node Exclude Filters" and enter the name of your Rundeck server. This will cause the job to run on just the remote Nodes (eg., centos54 and ubuntu).
+
+Type in shell script that produces some information (eg, uname -a)
+
+Save the Workflow step.
+
+Press the "Create" button at the bottom of the page. 
+
+
+#Simple saved job
+
+Press the "Run Job Now" button to begin execution. The job will be queued and executed.
+
+Look in the "Now running" section. Press the progress bar in the Activity area to see wat Rundeck deed.
+
+
+
