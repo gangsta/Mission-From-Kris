@@ -1,0 +1,83 @@
+# First download the rpm file or other file wich become with your system (below you can see link to)
+
+Https://www.virtualbox.org/wiki/Linux_Downloads
+
+#              Debian-based Linux distributions
+
+Add one of the following lines according to your distribution to your /etc/apt/sources.list:
+
+deb http://download.virtualbox.org/virtualbox/debian trusty contrib
+deb http://download.virtualbox.org/virtualbox/debian saucy contrib
+deb http://download.virtualbox.org/virtualbox/debian raring contrib
+deb http://download.virtualbox.org/virtualbox/debian quantal contrib
+deb http://download.virtualbox.org/virtualbox/debian precise contrib
+deb http://download.virtualbox.org/virtualbox/debian lucid contrib non-free
+deb http://download.virtualbox.org/virtualbox/debian wheezy contrib
+deb http://download.virtualbox.org/virtualbox/debian squeeze contrib non-free
+
+(Up to version 3.2 the packages were located in the non-free section. Starting with version 4.0 they are located in the contrib section.)
+
+The Oracle public key for apt-secure can be downloaded here. You can add this key with
+
+sudo apt-key add oracle_vbox.asc
+
+or combine downloading and registering:
+
+wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
+
+The key fingerprint is
+
+7B0F AB3A 13B9 0743 5925  D9C9 5442 2A4B 98AB 5139
+Oracle Corporation (VirtualBox archive signing key) <info@virtualbox.org>
+
+(As of VirtualBox 3.2, the signing key was changed. The old Sun public key for apt-secure can be downloaded  here.)
+
+To install VirtualBox, do
+
+sudo apt-get update
+sudo apt-get install virtualbox-4.3
+
+Replace virtualbox-4.3 by
+
+    virtualbox-4.2 to install VirtualBox 4.2.18
+    virtualbox-4.1 to install VirtualBox 4.1.28
+    virtualbox-4.0 to install VirtualBox 4.0.20
+    virtualbox-3.2 to install VirtualBox 3.2.22 
+
+Note: Ubuntu/Debian users might want to install the dkms package to ensure that the VirtualBox host kernel modules (vboxdrv, vboxnetflt and vboxnetadp) are properly updated if the linux kernel version changes during the next apt-get upgrade. For Debian it is available in Lenny backports and in the normal repository for Squeeze and later. The dkms package can be installed through the Synaptic Package manager or through the following command:
+
+sudo apt-get install dkms
+
+What to do when experiencing The following signatures were invalid: BADSIG ... when refreshing the packages from the repository?
+
+# sudo -s -H
+# apt-get clean
+# rm /var/lib/apt/lists/*
+# rm /var/lib/apt/lists/partial/*
+# apt-get clean
+# apt-get update
+
+#                   RPM-based Linux distributions
+
+Starting with VirtualBox 3.0.12 we provide a yum-style repository for Oracle Linux/Fedora/RHEL/openSUSE. Note that 3.0.x .rpm packages are named VirtualBox-3.0.x while 3.1.x .rpm packages are named VirtualBox-3.1-3.1.x. This naming scheme allows to use the older 3.0.x packages without changing the repository.
+
+Furthemore, all .rpm packages are signed. The Oracle public key for rpm can be downloaded here. You can add this key (not necessary for yum users, see below!) with
+
+sudo rpm --import oracle_vbox.asc
+
+or combine downloading and registering:
+
+wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | rpm --import -
+
+The key fingerprint is
+
+7B0F AB3A 13B9 0743 5925  D9C9 5442 2A4B 98AB 5139
+Oracle Corporation (VirtualBox archive signing key) <info@virtualbox.org>
+
+After importing the public key, the package signature can be checked with
+
+rpm --checksig PACKAGE_NAME
+
+Note that importing the key is not necessary for yum users (Oracle Linux/Fedora/RHEL/CentOS) when using one of the virtualbox.repo files from below as yum downloads and imports the public key automatically! 
+
+
