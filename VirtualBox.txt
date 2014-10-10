@@ -12,6 +12,68 @@ $sudo apt-get update
 $sudo apt-get install virtualbox-4.3
 $sudo apt-get install dkms
 
+                            @VBox Kernel problems
 
 
+#If you`r use wget to install ,and you have  receive  false ,then try to use 
 
+   $yum install wget 
+
+
+3. Install dkms
+
+   $yum install dkms 
+
+4. update yum 
+
+   $yum update
+
+Then check your kernel version with  
+
+   $uname -r
+
+
+Then you can reboot your system with command 
+  
+   $ reboot
+
+5. Here is some packages  that does not installed,which you need for kernel version up to date 
+
+
+## CentOS 6 and RHEL 6 ##
+rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+ 
+## CentOS 5 and RHEL 5 ##
+rpm -Uvh http://dl.fedoraproject.org/pub/epel/5/i386/epel-release-5-4.noarch.rpm
+
+----------------------------------------------------------------------------------------
+yum install binutils gcc make patch libgomp glibc-headers glibc-devel kernel-headers kernel-devel dkms
+ 
+## PAE kernel users install ##
+
+yum install binutils gcc make patch libgomp glibc-headers glibc-devel kernel-headers kernel-PAE-devel dkms
+
+
+6. up date virtualbox to 
+
+   $yum install VirtualBox-4.3
+
+In more of Redhad linuxs it is not work(no idea why) then you can go to VirtualBox.org  
+then downloads then choose your Linux version en install it.
+
+7. Vboxdrv it is important if you want run Vagrant 
+
+   $ /etc/init.d/vboxdrv setup
+
+
+8. Add VirtualBox User(s) to vboxusers Group
+
+Replace user_name with your own user name
+
+   $usermod -a -G vboxusers user_name
+
+
+9. Start VirtualBox
+
+
+   $VirtualBox
