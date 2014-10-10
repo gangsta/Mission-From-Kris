@@ -14,8 +14,23 @@ $sudo apt-get install dkms
 
                             @VBox Kernel problems
 
+1. Change to root(if you are in sudo files ,then you can go to next step) 
+   
+   $su -
 
-#If you`r use wget to install ,and you have  receive  false ,then try to use 
+2. Install .repo
+
+   $cd /etc/yum.repos.d/
+
+# Fedora 
+  
+   $wget http://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo
+ 
+# CentOS
+  
+   $wget http://download.virtualbox.org/virtualbox/rpm/rhel/virtualbox.repo
+
+#If you use wget to install ,and you have received false ,then try to use 
 
    $yum install wget 
 
@@ -37,7 +52,7 @@ Then you can reboot your system with command
   
    $ reboot
 
-5. Here is some packages  that does not installed,which you need for kernel version up to date 
+5. Here are some packages  that were`nt installed, which you need to solve the kernel version problems
 
 
 ## CentOS 6 and RHEL 6 ##
@@ -58,10 +73,10 @@ yum install binutils gcc make patch libgomp glibc-headers glibc-devel kernel-hea
 
    $yum install VirtualBox-4.3
 
-In more of Redhad linuxs it is not work(no idea why) then you can go to VirtualBox.org  
-then downloads then choose your Linux version en install it.
+In some versions of Redhad linuxs it is not work(no idea why) ,then you can go to VirtualBox.org  
+then downloads, then choose your Linux version,and install it.
 
-7. Vboxdrv it is important if you want run Vagrant 
+7. Vboxdrv is important if you want run Vagrant 
 
    $ /etc/init.d/vboxdrv setup
 
