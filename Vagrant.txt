@@ -2,14 +2,11 @@
 
 https://www.vagrantup.com/downloads.html
 
-Installing Vagrant is extremely easy. Head over to the downloads page and get the appropriate installer or package for your platform. Then install it using standard procedures for your operating system.
-
-# Before diving into your first project, please install Vagrant. And because we'll be using VirtualBox as our provider for the getting started guide, please install that as well.
-
-#     Up and Running
+# Before diving into your first project, please install VirtualBox.
+  
+#install Vagrant then start with command
 
 $ vagrant init hashicorp/precise32
+
 $ vagrant up
 
-
-After running the above two commands, you'll have a fully running virtual machine in VirtualBox You can SSH into this machine with vagrant ssh, and when you're done playing around, you can remove all traces of it with vagrant destroy.
