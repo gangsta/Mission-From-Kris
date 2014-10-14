@@ -1,40 +1,40 @@
 
- node "rundeckMaster" {
+# node "rundeckMaster" {
 
-  $java = 'java-1.6.0-openjdk'
+ # $java = 'java-1.6.0-openjdk'
  
 
 
-  yumrepo { 'rundeck':
+ #yumrepo { 'rundeck':
     descr     => 'rundeck-release-bintray',
     baseurl   => 'http://dl.bintray.com/rundeck/rundeck-rpm',
     gpgcheck  => 0,
     enabled   => 1,
   }
 
-  package { 'rundeck':
+ #package { 'rundeck':
     ensure  => 'present',
     require => Yumrepo['rundeck'],
     before  => Package["$java"],
   }
 
-  package { $java:
+ #package { $java:
     ensure  => 'present',
   }
 
   # Firewall rule for dashing
-  firewall { '010 explicit rule dashing':
+ # firewall { '010 explicit rule dashing':
     proto   => 'tcp',
     dport   => '4440',
     action  => 'accept',
   }
 
-  service { 'rundeckd':
+  #service { 'rundeckd':
     ensure  => 'running',
     require => Package['rundeck', "$java"],
   }
 
-  user { 'rundeck':
+ # user { 'rundeck':
     ensure  => 'present',
     require => Service['rundeckd'],
   }
