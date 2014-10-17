@@ -14,7 +14,7 @@
     7-try manuel job (root@ip address _slav 'sudo service sshd restart') 
      to see if Rundeck can run command like restart sshd
         
-3Vagrant
+3 Vagrant
   
     1-Vagrant init
     2-Vagrantfile(configuration)
