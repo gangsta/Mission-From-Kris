@@ -5,7 +5,7 @@
 
 2 Rundeck
   
-    1-simple manual job(uname -a)
+    1-try simple manual job(uname -a)
     2-create Rundeck_master && Rundeck_slave
     3-the same Rsa key for @master & @slave 
     4-static ip address for @master && @slave (in vagrantfile)
