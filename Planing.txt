@@ -1,5 +1,32 @@
-*1- study github 
-*2- study rundeck
-*3- study vagrant
-    *3(1)-VirtualBox install
-*4- study puppet 
+1 Github
+  
+    1-Push
+    2-Pull
+
+2 Rundeck
+  
+    1-simple manual job(uname -a)
+    2-create Rundeck_master && Rundeck_slave
+    3-the same Rsa key for @master & @slave 
+    4-static ip address for @master && @slave (in vagrantfile)
+    5-add rundeck_slave to wheel group or sudo
+    6-try from @master to @slave with terminator(to see if you can without passwd )
+    7-try manuel job (root@ip address _slav 'sudo service sshd restart') 
+     to see if Rundeck can run command like restart sshd
+        
+3Vagrant
+  
+    1-Vagrant init
+    2-Vagrantfile(configuration)
+        
+          A-set CentosBox in Vagrantfile
+          B-set static ip address for @master & @slave 
+          C-config. for Puppet
+
+    3-run Vagrant
+           
+4 Puppet 
+   
+    1-Make site.pp(standart for Puppet)
+    2-Make Rundeck_master.pp(config. for @master)
+    3-Make Rundeck_slave.pp(config. for @slave)

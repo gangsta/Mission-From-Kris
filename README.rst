@@ -8,7 +8,9 @@ Rundeck which restart a simple service (sshd) on the other node.)
 
 
 So first I must learn  to make commands with Rundeck to restart sshd,
-then use Vagrant to make many of Rundeck machines.  In the end I must
-puppetize(with Puppet) Vagrant to make, in one time, hundred of thousand of
-Rundeck commands.So puppetizing  is automatisation for Vagrant to make
-everything easy and at once .
+then use Vagrant to make Vagrantfile were is too installed CentosBox
+(why Centos?because most people use it) and make too  many of Rundeck machines,
+exp. Rundeck_master & Rundeck_slave.  In the end I must
+make Rundeck_master.pp & Rundeck_slave.pp for config Puppet(also site.pp) ,
+if after installing, I can run my Vagrant wihtout problem,then i must have job 
+in Rundeck wich restart service sshd.  
