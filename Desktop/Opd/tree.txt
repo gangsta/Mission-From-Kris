@@ -1,0 +1,25 @@
+├── data
+│   ├── rsa_id
+│   └── service-sshd-restart.xml
+├── Github.txt
+├── Kali.txt
+├── Planing.txt
+├── puppet
+│   ├── manifests
+│   │   ├── classes
+│   │   ├── nodes
+│   │   └── site.pp
+│   └── modules
+│       ├── concat
+│       ├── firewall
+│       └── ssh-keys
+├── Puppet-manifest.txt
+├── README.rst
+├── Rundeck.txt
+├── testkaren.txt
+├── Vagrantfile
+├── Vagrant.txt
+└── VirtualBox.txt
+
+
+Here is info about files,wich is in map Mission-From-Kris ,and wich i use to have clear Mission.
