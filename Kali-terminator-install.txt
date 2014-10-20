@@ -1,0 +1,13 @@
+http://launchpad.net/terminator/trun...or-0.97.tar.gz
+
+#run these commands after you download
+
+$tar -xzvf terminator-0.97.tar.gz
+
+then use command to install it
+
+$sudo apt-get install terminator  #to be sure if you deed install.
+
+#run terminator
+
+$terminator 
