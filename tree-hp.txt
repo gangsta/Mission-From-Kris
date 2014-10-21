@@ -5,78 +5,39 @@
 │   ├── kakoy-pacan_8918702_orig_.jpeg
 │   ├── VirtualBox-4.3-4.3.18_96516_el6-1.x86_64.rpm
 │   └── wait-what.jpg
-├── Mission-From-Kris
-│   ├── Github.txt
-│   ├── Kali-terminator-install.txt
-│   ├── Kali.txt
-│   ├── Planing.txt
-│   ├── Puppet-manifest.txt
-│   ├── README.rst
-│   ├── rundeck_master.pp
-│   ├── rundeck_slave.pp
-│   ├── Rundeck.txt
-│   ├── testkaren.txt
-│   ├── tree.txt
-│   ├── Vagrantfile
-│   ├── Vagrant.txt
-│   └── VirtualBox.txt
 ├── Music
+├── new folder
+│   ├── Mission-From-Kris
+│   │   ├── Github.txt
+│   │   ├── Kali-terminator-install.txt
+│   │   ├── Kali.txt
+│   │   ├── Planing.txt
+│   │   ├── Puppet-manifest.txt
+│   │   ├── README.rst
+│   │   ├── rundeck_master.pp
+│   │   ├── rundeck_slave.pp
+│   │   ├── Rundeck.txt
+│   │   ├── site.pp
+│   │   ├── testkaren.txt
+│   │   ├── tree-hp.txt
+│   │   ├── tree.txt
+│   │   ├── Vagrantfile
+│   │   ├── Vagrant.txt
+│   │   └── VirtualBox.txt
+│   ├── puppet
+│   │   ├── manifests
+│   │   │   ├── classes
+│   │   │   ├── nodes
+│   │   │   │   ├── rundeck_master.pp
+│   │   │   │   └── rundeck_slave.pp
+│   │   │   └── site.pp
+│   │   └── modules
+│   ├── vagrant_1.6.5_x86_64.rpm
+│   └── Vagrantfile
 ├── outpd.txt
 ├── Pictures
 ├── Public
-├── puppet
-│   ├── manifests
-│   │   ├── classes
-│   │   ├── nodes
-│   │   │   ├── rundeck_master.pp
-│   │   │   └── rundeck_slave.pp
-│   │   └── site.pp
-│   └── modules
 ├── Templates
-├── vagrant_1.6.5_x86_64.rpm
-├── Vagrantfile
 ├── Videos
 └── VirtualBox VMs
 
-15 directories, 24 files
-[Karen@localhost ~]$ touch tree-hp.txt | tree
-.
-├── Desktop
-├── Documents
-├── Downloads
-│   ├── google-chrome-stable_current_x86_64.rpm
-│   ├── kakoy-pacan_8918702_orig_.jpeg
-│   ├── VirtualBox-4.3-4.3.18_96516_el6-1.x86_64.rpm
-│   └── wait-what.jpg
-├── Mission-From-Kris
-│   ├── Github.txt
-│   ├── Kali-terminator-install.txt
-│   ├── Kali.txt
-│   ├── Planing.txt
-│   ├── Puppet-manifest.txt
-│   ├── README.rst
-│   ├── rundeck_master.pp
-│   ├── rundeck_slave.pp
-│   ├── Rundeck.txt
-│   ├── testkaren.txt
-│   ├── tree.txt
-│   ├── Vagrantfile
-│   ├── Vagrant.txt
-│   └── VirtualBox.txt
-├── Music
-├── outpd.txt
-├── Pictures
-├── Public
-├── puppet
-│   ├── manifests
-│   │   ├── classes
-│   │   ├── nodes
-│   │   │   ├── rundeck_master.pp
-│   │   │   └── rundeck_slave.pp
-│   │   └── site.pp
-│   └── modules
-├── Templates
-├── vagrant_1.6.5_x86_64.rpm
-├── Vagrantfile
-├── Videos
-└── VirtualBox VMs
