@@ -20,7 +20,7 @@ node 'rundeckMaster' {
   }
 
   # Firewall rule for dashing
-  firewall { '010 explicit rule dashing':
+  firewall { '010 explicit rule rundeck':
     proto   => 'tcp',
     dport   => '4440',
     action  => 'accept',
