@@ -10,3 +10,16 @@ $ vagrant init hashicorp/precise32
 
 $ vagrant up
 
+
+#if you are using Ubunut ,sometimes you need to add Vagrant box manually.
+
+
+$vagrant box add base http://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.4-x86_64-v20131103.box
+
+That is Centos x86_64 box ,if you need some other boxes then us link below
+
+http://www.vagrantbox.es/
+
+choose your needed box ,and add it like below showed
+
+$vagrant box add "box_name"  "box_URL"
